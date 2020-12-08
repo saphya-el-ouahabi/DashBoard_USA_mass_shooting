@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+		<title>Dashboard USA</title>
+		<meta charset="utf-8">
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<link rel="stylesheet" href="css/main_style.css" />
+		<link rel="stylesheet" href="css/map_style.css" />
+		<link rel="stylesheet" href="css/lineplot_style.css" />
+		<link rel="stylesheet" href="css/dashboard.css" />
+	</head>
+
+	<body>
+
+		<div class="content">
+
+			<header>
+			  <div class="header-background"></div>
+			  <div class="title">
+				<h1> Dashboard: Fusillade de masse aux Etats Unis </h1>
+			  </div>
+			</header>
+
+			<main>
+				<div class="chartContainer">
+
+					<br><br>
+					<button class="button"><span><a href="bdd.html">Base de données</a></span></button>						
+						<div class="map_chart">
+							<br><br>
+
+							<t>Ce dashboard contient divers visualisations sur les fusillades de masse qui se sont déroulées aux Etats-Unis depuis 1982.
+							<br><br> 
+							Notre dashboard est interactif donc n'hésitez pas à parcourir les graphiques, de cliquer et double cliquer sur la carte pour apprendre plus sur ce sujet.</t>						
+							
+
+							<text class="chartTitle">Carte des Etats Unis</text>
+
+							<svg id="map"></svg>
+							<svg id="legend"></svg> 
+						</div>
+						<script type="text/javascript" src="js/fonctions.js"></script>
+						<script type="text/javascript" src="js/map.js"></script>
+
+
+
+						<div id="lineplot" class="chart">
+							<p class="label"></p>
+							<text class="chartTitle">Evolution dans le temps du nombre de fusillade</text>				
+							<svg  width=960 height=500 id ="my_lineplot"></svg>
+							<script type="text/javascript" src="js/lineplot.js"></script>
+						</div>
+
+
+						<div id="ethnies" class="chart">						
+							<text class="chartTitle">Répartition des éthnies</text>
+							<div id="my_chart1"></div>	
+							<script type="text/javascript" src="js/barchart.js"></script>			
+						</div>
+
+
+						<div id="pieChart" class="chart">
+							<text class="chartTitle">Proportion des meurtriers ayant ou pas des problèmes mentaux </text>	
+							<br><br><br><br>
+							<svg width=600 height=300 id ="my_pie"></svg>
+							<script type="text/javascript" src="js/pie.js"></script>
+						</div>
+						
+
+				</div>
+			</main>
+		</div>
+	</body>
+
+	<div id="footer">
+		<p>S.El Ouahabi & C.Krüsi | Tous droits réservés | 2020 </p>
+	</div>
+	
+</html>

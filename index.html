@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+		<title>Dashboard USA</title>
+		<meta charset="utf-8">
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<link rel="stylesheet" href="css/main_style.css" />
+		<link rel="stylesheet" href="css/map_style.css" />
+		<link rel="stylesheet" href="css/lineplot_style.css" />
+		<link rel="stylesheet" href="css/dashboard.css" />
+	</head>
+
+	<body>
+
+		<div class="content">
+
+			<header>
+			  <div class="header-background"></div>
+			  <div class="title">
+				<h1> Dashboard mass shooting USA </h1>
+			  </div>
+			</header>
+
+			<main>
+				<div class="chartContainer">
+
+					<br><br>
+					<button class="button"><span><a href="bdd.html">Base de données</a></span></button>						
+						<div class="map_chart">
+							<br><br>
+							<h2>Location of mass shooting in USA</h2>
+							<t>At a high-level of mass shooting image acorss United State, the injured and fatalities are a rising 
+								concerns for society. The injured and fatalities are circled out by state and is displayed in mapping 
+								visulization below where the grey circles indicate the number of injured and the number of fatalities. 
+								It seems that states like CA, TX, FL and NEV have higher number of mass shooting victims than other 
+								states. So the number of victims can be considered to the fact that the population of these states 
+								are larger.</t>
+							<svg id="map"></svg>
+							<svg id="legend"></svg> 
+						</div>
+						<script type="text/javascript" src="js/fonctions.js"></script>
+						<script type="text/javascript" src="js/map.js"></script>
+
+
+
+						<div id="lineplot" class="chart">
+							<p class="label"></p>
+							<text class="chartTitle">Evolution dans le temps du nombre de fusillade</text>				
+							<svg  width=960 height=500 id ="my_lineplot"></svg>
+							<script type="text/javascript" src="js/lineplot.js"></script>
+						</div>
+
+
+						<div id="ethnies" class="chart">						
+							<text class="chartTitle">Répartition des éthnies</text>
+							<div id="my_chart1"></div>	
+							<script type="text/javascript" src="js/barchart.js"></script>			
+						</div>
+
+
+						<div id="pieChart" class="chart">
+							<text class="chartTitle">Santé mentale</text>	
+							<br><br><br><br>
+							<svg width=600 height=300 id ="my_pie"></svg>
+							<script type="text/javascript" src="js/pie.js"></script>
+						</div>
+						
+
+				</div>
+			</main>
+		</div>
+	</body>
+
+	<div id="footer">
+		<p>S.El Ouahabi & C.Krüsi | Tous droits réservés | 2020 </p>
+	</div>
+	
+</html>
