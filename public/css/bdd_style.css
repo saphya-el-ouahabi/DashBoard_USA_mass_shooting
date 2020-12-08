@@ -42,11 +42,11 @@
 table {
     border: medium solid;
     border-collapse: collapse;
-    font: 15px sans-serif;
+    font: 12px sans-serif;
     display: block;
     overflow: scroll;
-    width: 1800px;
-    height: 800px;
+    width: 1400px;
+    height: 500px;
     margin : 0 auto 
     }
     
