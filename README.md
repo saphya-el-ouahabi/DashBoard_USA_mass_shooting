@@ -1,5 +1,5 @@
 # DashBoard_USA_mass_shooting
-Réalisé dans le cadre de la matière DATA732
+Réalisé dans le cadre de la matière DATA732 (Analyse et visualisation de données)
 
 <br/>
 Ce dashboard permet de visualiser les données concernant les fusillades de masse qui ont eu lieu de 1980 à 2020 aux Etats Unis. 
