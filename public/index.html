@@ -24,25 +24,23 @@
 
 			<main>
 				<div class="chartContainer">
-
 					<br><br>
-					<button class="button"><span><a href="bdd.html">Base de données</a></span></button>						
+					<button class="button"><span><a href="bdd.html">Base de données</a></span></button>	
+
+
+
 						<div class="map_chart">
 							<br><br>
-
 							<t>Ce dashboard contient divers visualisations sur les fusillades de masse qui se sont déroulées aux Etats-Unis depuis 1982.
 							<br><br> 
-							Notre dashboard est interactif donc n'hésitez pas à parcourir les graphiques, de cliquer et double cliquer sur la carte pour apprendre plus sur ce sujet.</t>						
-							
-
+							Notre dashboard est interactif donc n'hésitez pas à parcourir les graphiques, de cliquer et double cliquer sur la carte pour apprendre plus sur ce sujet.</t>													
 							<text class="chartTitle">Carte des Etats Unis</text>
-
 							<svg id="map"></svg>
 							<svg id="legend"></svg> 
+							<script type="text/javascript" src="js/fonctions.js"></script>
+							<script type="text/javascript" src="js/map.js"></script>
 						</div>
-						<script type="text/javascript" src="js/fonctions.js"></script>
-						<script type="text/javascript" src="js/map.js"></script>
-
+						
 
 
 						<div id="lineplot" class="chart">
@@ -53,11 +51,13 @@
 						</div>
 
 
+
 						<div id="ethnies" class="chart">						
 							<text class="chartTitle">Répartition des éthnies</text>
 							<div id="my_chart1"></div>	
 							<script type="text/javascript" src="js/barchart.js"></script>			
 						</div>
+
 
 
 						<div id="pieChart" class="chart">
@@ -66,6 +66,7 @@
 							<svg width=600 height=300 id ="my_pie"></svg>
 							<script type="text/javascript" src="js/pie.js"></script>
 						</div>
+						
 						
 
 				</div>
