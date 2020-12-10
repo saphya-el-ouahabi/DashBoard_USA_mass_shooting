@@ -1,3 +1,6 @@
+// Bar chart sur la répartition des ethnies 
+
+// on récupère les données de notre fichier csv (créé en amont grace au TPd3js.py )
 d3.csv("datasets/repartition_ethnie.csv", function(error, data){
     data.forEach(function (d) {
       d.Count = +d.Count;
@@ -10,16 +13,13 @@ d3.csv("datasets/repartition_ethnie.csv", function(error, data){
     var maxCount = d3.max(data, function(d){ return d.Count; });
     
     
-    // define scales and axises
+    // on définit les échelles et les axes
     var xScale = d3.scale.ordinal()
         .domain(data.map(function(d){ return d.Race; }))
         .rangeBands([0, Width], 0.1);
     var yScale = d3.scale.linear()
         .domain([0, maxCount])
-        .range([0, Height]);
-    var color=d3.scale.ordinal()
-        .range(["#708090","#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56"]);
-  
+        .range([0, Height]);  
     var xAxis = d3.svg.axis()
         .scale(xScale)
         .tickSize(0,0)
@@ -30,12 +30,15 @@ d3.csv("datasets/repartition_ethnie.csv", function(error, data){
         .ticks(5)
         .orient('left');
     
-    // create a svg canvas
+    // ainsi que les couleurs de nos barres 
+    var color=d3.scale.ordinal()
+        .range(["#708090","#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56"]);
+    
+    // Création du svg qui va être appelé dans notre fichier html
     var svg = d3.select('#my_chart1').append('svg')
         .attr({width: svgWidth, height: svgHeight})
     
-    
-    // Drawing for axises
+    // On dessine les axes 
     var xGroup = svg.append('g')
         .attr('class', 'xGroup')
         .attr('transform', 'translate(' + [margin.left, margin.top + Height + axisPadding] + ')');
@@ -48,11 +51,11 @@ d3.csv("datasets/repartition_ethnie.csv", function(error, data){
     styleAxis(yGroup);
 
 
-    // Label layer
+    // on créé la variable label et on associe le positionnement 
     var label = svg.append('g')
         .attr('transform', 'translate(' + [margin.left - axisPadding, margin.top] + ')');
 
-    // Drawing for graph body
+    //visualisation pour le corps du graph
     var graph = svg.append('g')
         .attr('class', 'graph')
         .attr('transform', 'translate(' + [margin.left, margin.top + Height] + ')');
@@ -107,13 +110,13 @@ d3.csv("datasets/repartition_ethnie.csv", function(error, data){
 
 
 function styleAxis(axis){
-    // style path
+    // path
     axis.select('.domain').attr({
         fill: 'none',
         stroke: '#888',
         'stroke-width': 1
     });
-    // style tick
+    // tick
     axis.selectAll('.tick line').attr({
         stroke: '#000',
         'stroke-width': 1,
