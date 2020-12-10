@@ -1,16 +1,17 @@
+// Bar chart sur la répartition des ethnies SUR LE TEXAS
+
+
 d3.csv("datasets/ethnieTexas.csv", function(error, data){
     data.forEach(function (d) {
       d.Count = +d.Count;
     });
-    // console.log(data)
+
     var margin = {top: 65, bottom: 50, left: 50, right: 30}, axisPadding = 10;
     var Width = 500, Height = 300;
     var svgWidth = Width + margin.left + margin.right,
         svgHeight = Height + margin.top + margin.bottom;
     var maxCount = d3.max(data, function(d){ return d.Count; });
     
-    
-    // define scales and axises
     var xScale = d3.scale.ordinal()
         .domain(data.map(function(d){ return d.Race; }))
         .rangeBands([0, Width], 0.1);
@@ -30,12 +31,9 @@ d3.csv("datasets/ethnieTexas.csv", function(error, data){
         .ticks(5)
         .orient('left');
     
-    // create a svg canvas
     var svg = d3.select('#my_chart2').append('svg')
         .attr({width: svgWidth, height: svgHeight})
-    
-    
-    // Drawing for axises
+
     var xGroup = svg.append('g')
         .attr('class', 'xGroup')
         .attr('transform', 'translate(' + [margin.left, margin.top + Height + axisPadding] + ')');
@@ -46,13 +44,10 @@ d3.csv("datasets/ethnieTexas.csv", function(error, data){
         .attr('transform', 'translate(' + [margin.left - axisPadding, margin.top] + ')');
     yGroup.call(yAxis);
     styleAxis(yGroup);
-
-
-    // Label layer
+    
     var label = svg.append('g')
         .attr('transform', 'translate(' + [margin.left - axisPadding, margin.top] + ')');
 
-    // Drawing for graph body
     var graph = svg.append('g')
         .attr('class', 'graph')
         .attr('transform', 'translate(' + [margin.left, margin.top + Height] + ')');
@@ -85,8 +80,6 @@ d3.csv("datasets/ethnieTexas.csv", function(error, data){
         });
     })
     
-    
-    // tooltips
     var div = d3.select('#my_chart2').append('div')
         .attr('class', 'tooltip')
         .style('display', 'none');
@@ -105,15 +98,12 @@ d3.csv("datasets/ethnieTexas.csv", function(error, data){
     }
 })
 
-
 function styleAxis(axis){
-    // style path
     axis.select('.domain').attr({
         fill: 'none',
         stroke: '#888',
         'stroke-width': 1
     });
-    // style tick
     axis.selectAll('.tick line').attr({
         stroke: '#000',
         'stroke-width': 1,
