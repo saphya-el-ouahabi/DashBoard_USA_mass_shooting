@@ -18,30 +18,29 @@
 			<header>
 			  <div class="header-background"></div>
 			  <div class="title">
-				<h1> Dashboard mass shooting USA </h1>
+				<h1> Dashboard: Fusillade de masse aux Etats Unis </h1>
 			  </div>
 			</header>
 
 			<main>
 				<div class="chartContainer">
-
 					<br><br>
-					<button class="button"><span><a href="bdd.html">Base de données</a></span></button>						
+					<button class="button"><span><a href="bdd.html">Base de données</a></span></button>	
+
+
+
 						<div class="map_chart">
 							<br><br>
-							<h2>Location of mass shooting in USA</h2>
-							<t>At a high-level of mass shooting image acorss United State, the injured and fatalities are a rising 
-								concerns for society. The injured and fatalities are circled out by state and is displayed in mapping 
-								visulization below where the grey circles indicate the number of injured and the number of fatalities. 
-								It seems that states like CA, TX, FL and NEV have higher number of mass shooting victims than other 
-								states. So the number of victims can be considered to the fact that the population of these states 
-								are larger.</t>
+							<t>Ce dashboard contient divers visualisations sur les fusillades de masse qui se sont déroulées aux Etats-Unis depuis 1982.
+							<br><br> 
+							Notre dashboard est interactif donc n'hésitez pas à parcourir les graphiques, de cliquer et double cliquer sur la carte pour apprendre plus sur ce sujet.</t>													
+							<text class="chartTitle">Carte des Etats Unis</text>
 							<svg id="map"></svg>
 							<svg id="legend"></svg> 
+							<script type="text/javascript" src="js/fonctions.js"></script>
+							<script type="text/javascript" src="js/map.js"></script>
 						</div>
-						<script type="text/javascript" src="js/fonctions.js"></script>
-						<script type="text/javascript" src="js/map.js"></script>
-
+						
 
 
 						<div id="lineplot" class="chart">
@@ -52,6 +51,7 @@
 						</div>
 
 
+
 						<div id="ethnies" class="chart">						
 							<text class="chartTitle">Répartition des éthnies</text>
 							<div id="my_chart1"></div>	
@@ -59,12 +59,14 @@
 						</div>
 
 
+
 						<div id="pieChart" class="chart">
-							<text class="chartTitle">Santé mentale</text>	
+							<text class="chartTitle">Proportion des meurtriers ayant ou pas des problèmes mentaux </text>	
 							<br><br><br><br>
 							<svg width=600 height=300 id ="my_pie"></svg>
 							<script type="text/javascript" src="js/pie.js"></script>
 						</div>
+						
 						
 
 				</div>
