@@ -13,6 +13,11 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p {
     background: transparent;
 }
 
+h1 {
+  font-size: 25px;
+  font-weight: lighter;
+  line-height: 50px;
+}
 
 body {
     position: relative;
@@ -29,13 +34,13 @@ body {
     width: 100%;
 }
 
-a:hover {
-  font-weight: bold;
-}
-
 a {
   color: inherit;
   text-decoration: None;
+}
+
+a:hover {
+  font-weight: bold;
 }
 
 .content {
@@ -72,12 +77,29 @@ header {
     text-align: center;
 }
 
-h1 {
-    font-size: 25px;
-    font-weight: lighter;
-    line-height: 50px;
+#footer{
+	text-align: center;
+	display: block;
+	height: 50px;
+	width: 100%;
+  margin-top: 200px;
+  margin-bottom: 40px;
 }
 
+#footer p {
+	text-align: center;				
+	font-weight: bold;
+	font: inherit;
+	position: relative;
+  top: 28px;
+  font-size: 16px;
+}
+
+
+
+/* Partie sur la disposition des éléments graphique/d3js du dashboard */
+
+/* Classe commune à tous les éléments du dashboard, pour les disposer dans les cases blanches */
 .chart {
   height : 310px;
   width : 550px;
@@ -87,6 +109,16 @@ h1 {
   background-color: #fcfcfc;
   display: inline-block;
   vertical-align: top;
+}
+
+.chartTitle {
+  padding-top: 20px;
+  margin: 2px auto;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  color:#333;
+  font-size:20px;
 }
 
 #ethnies{
@@ -111,39 +143,6 @@ h1 {
   }
 }
 
-#nuage, #listeArticles {
-  width : 550px;
-  height : 310px;
-  display: inline-block;
-  vertical-align: top;
-  overflow: scroll;
-}
-
-#tableauArticles table {
-  margin-top:7px;
-  margin-left:5px;
-  border-collapse: collapse;
-  border: solid 1px #CCC;
-  width:100%;
-  color: #333;
-}
-
-#tableauArticles td {
-  padding : 5px;
-} 
-
-#tableauArticles tr:nth-child(odd) {
-  background-color: #EEE;
-}
-
-#tableauArticles tr {
-  border: solid 1px #DDD;
-}
-
-#tableauArticles .newspaper{
-  width:130px;
-}
-
 .chartContainer{
   margin: 0 auto;
 }
@@ -164,40 +163,4 @@ h1 {
   .chartContainer{
     width:1710px;
   }
-}
-
-.chartTitle {
-  padding-top: 20px;
-  margin: 2px auto;
-  text-align: center;
-  width: 100%;
-  display: inline-block;
-  color:#333;
-  font-size:20px;
-}
-
-.domain {
-  fill : None;
-  stroke : grey;
-  shape-rendering: crispEdges;
-}
-
-
-#footer{
-	text-align: center;
-	display: block;
-	height: 50px;
-	width: 100%;
-  margin-top: 200px;
-  margin-bottom: 40px;
-}
-
-
-#footer p {
-	text-align: center;				
-	font-weight: bold;
-	font: inherit;
-	position: relative;
-  top: 28px;
-  font-size: 16px;
 }
