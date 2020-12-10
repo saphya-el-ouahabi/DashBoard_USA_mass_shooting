@@ -1,24 +1,26 @@
+// Pie chart sur la répartition des problèmes mentaux 
+
 var pwidth = 410,
     pheight = 300,
-    // find the min of width and height and devided by 2
+    // trouver le minimum largeur et de hauteur et on divise par 2
     pradius = Math.min(pwidth, pheight) / 2;
 
-// color for the pie
+// on definit les couleurs des catégories de notre pie 
 var pcolor = d3.scale.ordinal()
     .range(["#CD5C5C", "#D3D3D3", "#8FBC8F"]);
 
 // Arc
 var arc = d3.svg.arc()
-    // the outer radius of the pie chart
+    // le rayon extérieur du pie
     .outerRadius(pradius - 10)
-    // the inner radius of the pie chart, set 0 for now
+    // le rayon intérieur du pie, on le set à 0 p set 0 pour l'instant
     .innerRadius(0);
 
-// Constructs a new pie function
+// Création d'une fontion pie
 var pie = d3.layout.pie()
-    // not sorting
+    // pas ordonné
     .sort(null)
-    // set the pie chart value to population.
+    // on définit la valeur du pie par rapport à la colonne Count de notre fichier csv (nombre de personnes).
     .value(function(d) { return d.Count; });
 
 var svg = d3.select("#my_pie").append("svg")
@@ -33,7 +35,6 @@ var div1= d3.select("body").append("div")
     .style("opacity", 0);
 
 d3.csv("datasets/mental.csv", function(error, data) {
-  // convert all population to integer
   data.forEach(function(d) {
     d.Count = +d.Count;
   });
@@ -57,12 +58,12 @@ d3.csv("datasets/mental.csv", function(error, data) {
               .style("opacity",0);
         });
 
-  // append path, the pie for each legal
+  // chemin append, on associe a chaque part du pie sa valeur (ici oui non autre)
   g.append("path")
       .attr("d", arc)
       .style("fill", function(d) { return pcolor(d.data.Value); });
 
-  // add text
+  // ajoute le texte
   g.append("text")
       .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
       .attr("dy", ".35em")
