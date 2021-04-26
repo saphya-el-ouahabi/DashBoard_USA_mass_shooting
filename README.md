@@ -3,7 +3,7 @@ Réalisé dans le cadre de la matière DATA732 (Analyse et visualisation de donn
 
 <br/>
 Ce dashboard permet de visualiser les données concernant les fusillades de masse qui ont eu lieu de 1980 à 2020 aux Etats Unis. 
-Pour se faire, nous avons utilisé la bibliothèque graphique D3.js de JavaScript.
+Pour ce faire, nous avons utilisé la bibliothèque graphique D3.js de JavaScript.
 <br/><br/><br/>
 
 <br/>
